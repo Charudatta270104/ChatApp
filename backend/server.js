@@ -21,7 +21,6 @@ app.use("/api/user", userRoutes);
 app.use("/api/chat", chatRoutes);
 app.use("/api/message", messageRoutes);
 
-
 const __dirname1 = path.resolve();
 
 if (process.env.NODE_ENV === "production") {
@@ -35,7 +34,6 @@ if (process.env.NODE_ENV === "production") {
     res.send("API is running..");
   });
 }
-
 
 // Error Handling middlewares
 app.use(notFound);
@@ -51,7 +49,7 @@ const server = app.listen(
 const io = require("socket.io")(server, {
   pingTimeout: 60000,
   cors: {
-    origin: "http://localhost:3000",
+    origin: "http://localhost:3001",
     // credentials: true,
   },
 });
